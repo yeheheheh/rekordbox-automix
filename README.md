@@ -4,6 +4,8 @@ Rekordbox 7 外部桥接器 + 离线 DJ 排 set / 自动接歌引擎。
 
 Rekordbox 没有公开插件 SDK，所以这不是一个嵌进 Rekordbox 界面的原生插件，而是一个本地伴生程序：读 Rekordbox 曲库、分析音频、排 set、规划过渡、用 Demucs 分轨渲染，再把结果写成 Rekordbox 播放列表或 `rekordbox.xml`。
 
+**一键安装包：** [GitHub Releases](https://github.com/yeheheheh/rekordbox-automix/releases/latest)
+
 - 输入：本地音频 / Rekordbox 7 `master.db`
 - 分析：BPM、调性、拍网格、8 小节乐句、能量、人声、Demucs 四轨
 - 排 set：兼容性图 + 束搜索，统一 target BPM，能量曲线
@@ -16,8 +18,8 @@ Rekordbox 没有公开插件 SDK，所以这不是一个嵌进 Rekordbox 界面�
 
 ## 一键安装（Windows）
 
-1. 下载本仓库 ZIP 并解压。
-2. 双击 `install.bat`。
+1. 从 [Releases](https://github.com/yeheheheh/rekordbox-automix/releases/latest) 下载 ZIP（或 clone 本仓库）。
+2. 解压后双击 `install.bat`；国内网络建议双击 `install-fast.bat`（NJU PyTorch cu128 镜像）。
 3. 安装完成后双击 `start-api.bat`。
 
 安装器会：
@@ -57,6 +59,7 @@ powershell -ExecutionPolicy Bypass -File .\install\install.ps1 `
 
 - 默认安装目录：`%LOCALAPPDATA%\djcore`
 - 默认 Torch 索引：`https://download.pytorch.org/whl/cu128`
+- 国内网络：`install-fast.bat` 使用 `https://mirrors.nju.edu.cn/pytorch/whl/cu128`；也可以用 `-TorchIndexUrl` 换其他镜像。
 - 50 系显卡（sm_120）需要 cu128 或更新；cu126 会报 `no kernel image is available`。
 - 首次安装会下载 PyTorch（约 2.4–2.9GB）和 Demucs 模型（约 80MB）；请预留 6GB 以上磁盘。
 
