@@ -1,0 +1,44 @@
+[project]
+name = "rekordbox-automix"
+version = "0.1.0"
+description = "Rekordbox 7 bridge + offline DJ set planner, transition renderer, CLI/HTTP/MCP"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "yeheheheh" }]
+dependencies = [
+  "numpy",
+  "scipy",
+  "librosa",
+  "soundfile",
+  "pydantic>=2",
+  "fastapi",
+  "uvicorn",
+  "pyloudnorm",
+  "httpx",
+  "imageio-ffmpeg",
+  "pyrekordbox",
+  "demucs",
+  "torch",
+  "torchaudio",
+  "mcp>=1.9,<2",
+]
+
+[project.urls]
+Homepage = "https://github.com/yeheheheh/rekordbox-automix"
+Source = "https://github.com/yeheheheh/rekordbox-automix"
+
+[project.scripts]
+djcore = "djcore.adapters.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["djcore*"]
+
+[tool.pytest.ini_options]
+testpaths = ["djcore/tests"]
+pythonpath = ["."]
+addopts = "-q"

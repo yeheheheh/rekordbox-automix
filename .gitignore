@@ -1,0 +1,21 @@
+# 本地运行时
+.venv/
+tools/
+outputs/
+fixtures/audio/*.wav
+install.log
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.pyc
+
+# 系统
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+
+# 不要把本地 Rekordbox 库、模型或 wheel 提交进来
+models/
+*.whl
